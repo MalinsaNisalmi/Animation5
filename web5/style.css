@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#earth {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at center, green, darkgreen);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -50px; /* half hidden to look like horizon */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+}
+
+#rocket {
+    background-image: url("Cartoon_space_rocket.png");
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    bottom: 150px; /* just above Earth */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.blast {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(circle,
+        yellow 0%,
+        orange 30%,
+        red 60%,
+        transparent 100%);
+    box-shadow:
+        0 0 30px yellow,
+        0 0 60px orange,
+        0 0 90px red;
+    animation: explode 0.5s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: translateX(-50%) scale(0.3);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(2);
+        opacity: 0;
+    }
+}
